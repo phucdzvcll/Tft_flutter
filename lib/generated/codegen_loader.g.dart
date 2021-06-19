@@ -15,16 +15,26 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
-  "champions": "Champions",
-  "top_team": "Top Team",
-  "item": "Item",
-  "user": "User"
+  "change_theme": "Change theme",
+  "change_language": "Change language",
+  "warning_sure": "Are you sure?",
+  "ask_again": "Do you want to exit app?",
+  "stay_here": "Stay here!",
+  "exit_app": "Exit App",
+  "screen_1": "Screen 1",
+  "screen_3": "Screen 2",
+  "screen_2": "Screen 3"
 };
 static const Map<String,dynamic> vi = {
-  "champions": "Tướng",
-  "top_team": "Top đội hình",
-  "item": "Trang bị",
-  "user": "Cá nhân"
+  "change_theme": "Đổi theme",
+  "change_language": "Đổi ngôn ngữ",
+  "warning_sure": "Bạn chắc chứ?",
+  "ask_again": "Bạn muốn thoát khỏi ứng dụng?",
+  "stay_here": "Ở lại!",
+  "exit_app": "Thoát",
+  "screen_1": "Màn hình 1",
+  "screen_3": "Màn hình 2",
+  "screen_2": "Màn hình 3"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "vi": vi};
 }

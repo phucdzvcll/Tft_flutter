@@ -1,6 +1,11 @@
 {
-  "champions": "Champions",
-  "top_team": "Top Team",
-  "item": "Item",
-  "user": "User"
+  "change_theme": "Change theme",
+  "change_language": "Change language",
+  "warning_sure":"Are you sure?",
+  "ask_again":"Do you want to exit app?",
+  "stay_here":"Stay here!",
+  "exit_app":"Exit App",
+  "screen_1": "Screen 1",
+  "screen_3": "Screen 2",
+  "screen_2": "Screen 3"
 }
