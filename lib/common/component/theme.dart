@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 
-//0xff222831 0xff393E46 0xffFD7014 0xffEEEEEE - Color Dark
-//0xff98DDCA 0xffD5ECC2 0xffFFD3B4 0xff8800ff - Color Light
+/* 0xff2C2C49 0xff4A375F 0xffD597CE 0xffF5B0CB - Color Dark */
+
+/* 0xffF0ECE3 0xffDFD3C3 0xffC7B198 0xff596E79 - Color Light
+https://colorhunt.co/palette/f0ece3dfd3c3c7b198596e79 */
+
 class MyThemes {
   static final darkTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xff393E46),
+    scaffoldBackgroundColor: const Color(0xff2C2C49),
     fontFamily: 'SF-Pro-Rounded',
-    bottomAppBarColor: Color(0xff222831),
+    bottomAppBarColor: Color(0xff4A375F),
     brightness: Brightness.dark,
     textTheme: TextTheme(
       headline1: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
       bodyText2: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
     ),
-    primaryColor: const Color(0xffFD7014),
-    iconTheme: IconThemeData(color: Colors.red[300]),
+    primaryColor: const Color(0xffD597CE),
+    iconTheme: IconThemeData(color: Color(0xffF5B0CB)),
   );
 
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xffD5ECC2),
+    scaffoldBackgroundColor: const Color(0xffF0ECE3),
     fontFamily: 'SF-Pro-Rounded',
     brightness: Brightness.light,
-    bottomAppBarColor: Color(0xff98DDCA),
+    bottomAppBarColor: Color(0xffDFD3C3),
     textTheme: TextTheme(
       headline1: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       bodyText1: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
       bodyText2: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
     ),
-    primaryColor: const Color(0xffFFD3B4),
-    iconTheme: const IconThemeData(color: Color(0xff8800ff)),
+    primaryColor: const Color(0xffC7B198),
+    iconTheme: const IconThemeData(color: Color(0xff596E79)),
   );
 }
