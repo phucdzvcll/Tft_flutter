@@ -10,5 +10,6 @@ abstract class  LocaleKeys {
   static const screen_1 = 'screen_1';
   static const screen_3 = 'screen_3';
   static const screen_2 = 'screen_2';
+  static const error = 'error';
 
 }

@@ -23,7 +23,8 @@ class CodegenLoader extends AssetLoader{
   "exit_app": "Exit App",
   "screen_1": "Screen 1",
   "screen_3": "Screen 2",
-  "screen_2": "Screen 3"
+  "screen_2": "Screen 3",
+  "error": "Error"
 };
 static const Map<String,dynamic> vi = {
   "change_theme": "Đổi theme",
@@ -34,7 +35,8 @@ static const Map<String,dynamic> vi = {
   "exit_app": "Thoát",
   "screen_1": "Màn hình 1",
   "screen_3": "Màn hình 2",
-  "screen_2": "Màn hình 3"
+  "screen_2": "Màn hình 3",
+  "error": "Lỗi"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "vi": vi};
 }

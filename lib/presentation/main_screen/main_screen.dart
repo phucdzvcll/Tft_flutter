@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tft_flutter/generated/locale_keys.g.dart';
+import 'package:tft_flutter/presentation/all_champs_and_items/ui/display_champs_and_items.dart';
 import 'package:tft_flutter/presentation/main_bloc/main_bloc.dart';
 
 class MainScreen extends StatefulWidget {
@@ -13,7 +14,31 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int selectIndex = 0;
+  int _selectIndex = 0;
+  final PageController _pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+  final List<Widget> _listItemIcons = [
+    Icon(
+      Icons.local_police_outlined,
+    ),
+    Icon(
+      Icons.emoji_events_outlined,
+    ),
+    Icon(
+      Icons.construction_outlined,
+    ),
+    Icon(
+      Icons.manage_accounts_outlined,
+    ),
+  ];
+  final List<Widget> _listScreen = [
+    DisplayChampsAndItems(),
+    Screen2(),
+    Screen3(),
+    SettingPage()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,34 +50,31 @@ class _MainScreenState extends State<MainScreen> {
         child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
             height: 55,
-            index: 0,
+            index: _selectIndex,
             color: Theme.of(ctx).bottomAppBarColor,
             animationCurve: Curves.linear,
             letIndexChange: (index) => true,
             backgroundColor: Theme.of(ctx).scaffoldBackgroundColor,
             animationDuration: Duration(milliseconds: 300),
-            items: [
-              Icon(
-                Icons.local_police_outlined,
-              ),
-              Icon(
-                Icons.emoji_events_outlined,
-              ),
-              Icon(
-                Icons.construction_outlined,
-              ),
-              Icon(
-                Icons.manage_accounts_outlined,
-              ),
-            ],
+            items: _listItemIcons,
             onTap: (index) {
               setState(() {
-                selectIndex = index;
+                _selectIndex = index;
+                _pageController.animateToPage(index,
+                    duration: Duration(milliseconds: 600), curve: Curves.ease);
               });
             },
           ),
-          body: [Screen1(), Screen2(), Screen3(), SettingPage()]
-              .elementAt(selectIndex),
+          body: PageView(
+            physics: AlwaysScrollableScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _selectIndex = index;
+              });
+            },
+            children: _listScreen,
+          ),
         ),
       ),
     );
@@ -81,21 +103,6 @@ class _MainScreenState extends State<MainScreen> {
           ),
         )) ??
         false;
-  }
-}
-
-class Screen1 extends StatelessWidget {
-  const Screen1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          LocaleKeys.screen_1.tr(),
-        ),
-      ),
-    );
   }
 }
 
